@@ -1,0 +1,40 @@
+@import './assets/styles/variables.scss';
+.Header {
+    margin-bottom: 3rem;
+}
+
+.Main {
+    display: flex;
+    justify-content: space-between;
+    @include transition;
+    @include media($mobile) {
+        flex-direction: column-reverse;
+    }
+    .FormContainer {
+        width: 50%;
+        @include transition;
+        @include media($laptop) {
+            width: 55%
+        }
+        @include media($tablet) {
+            width: 50%
+        }
+        @include media($mobile) {
+            width: 100%;
+        }
+    }
+    .CartContainer {
+        width: 40%;
+        @include transition;
+        @include media($laptop) {
+            width: 42%
+        }
+        @include media($tablet) {
+            width: 48%
+        }
+        @include media($mobile) {
+            width: 100%;
+        }
+    }
+    
+}
