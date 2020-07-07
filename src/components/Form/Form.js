@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './Form.module.scss'
 import { useForm } from 'react-hook-form';
+import Modal from '../UI/Modal/Modal';
 
 const Form = () => {
-    const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const [openModal, setOpenModal] = useState(false);
+    const { register, handleSubmit, errors, trigger } = useForm();
+    const close = () => setOpenModal(false);
+    const onSubmit = data => {
+        console.log(data);
+        setOpenModal(true);
+    };
     return (
         <form className={classes.Form} onSubmit={handleSubmit(onSubmit)}>
             <h3>Contact information</h3>
@@ -26,6 +32,7 @@ const Form = () => {
                 <div className={`${classes.InputContainer} ${errors.phone && classes.InputContainerError}`}>
                     <i className="material-icons">phone</i>
                     <input name="phone" type="phone" placeholder="Enter your number..."
+                        onBlur={() => { trigger('phone') }}
                         ref={register({
                             required: { value: true, message: 'Number is required.' },
                             minLength: { value: 10, message: 'Contact number too short.' },
@@ -120,6 +127,7 @@ const Form = () => {
             <footer>
                 <input type="submit" value="Continue" />
             </footer>
+            <Modal open={openModal} close={close} />
         </form >
     )
 }

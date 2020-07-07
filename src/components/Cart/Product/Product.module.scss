@@ -58,6 +58,7 @@
                 color: $theme-text-color;
                 padding: 0 3px;
                 cursor: pointer;
+                transition: none;
                 &:first-child,
                 &:last-child {
                     background: rgb(207, 207, 207);
@@ -65,11 +66,16 @@
                     i {
                         font-size: 0.95em;
                     }
+                    &:hover {
+                        background: $theme-highlight-color;
+                        color: #fff;
+                    }
                 }
                 &:nth-child(2) {
                     font-weight: bold;
                     font-size: 1.1em;
                 }
+
             }
         }
     }
