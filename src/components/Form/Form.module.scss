@@ -10,7 +10,7 @@
         }
     }
     .FormGroup {
-        margin: 10px auto 20px;
+        margin: 10px auto 0;
         label {
             display: block;
             width: 100%;
@@ -19,6 +19,11 @@
         }
         .InputContainer {
             position: relative;
+            border-radius: 10px;
+            border: 1px solid $theme-border-color;
+            &.InputContainerError {
+                border: 1px solid $theme-highlight-color;
+            }
             i {
                 position: absolute;
                 top: 50%;
@@ -34,7 +39,7 @@
                 width: 100%;
                 padding: 16px 18px 16px 50px;
                 border-radius: 10px;
-                border: 1px solid $theme-border-color;
+                border: none;
                 outline: none;
                 font-size: 14px;
                 font-weight: 500;
@@ -44,9 +49,19 @@
                 }
             }
         }
+        .Error {
+            height: 20px;
+            display: flex;
+            padding-right: 10px;
+            justify-content: flex-end;
+            align-items: flex-end;
+            font-size: .9em;
+            color: $theme-highlight-color;
+        }
         
     }
     .TwoFormGroups {
+        margin-top: 10px;
         display: flex;
         justify-content: space-between;
             .FormGroup {
