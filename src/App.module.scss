@@ -6,6 +6,7 @@
 .Main {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 3rem;
     @include transition;
     @include media($mobile) {
         flex-direction: column-reverse;

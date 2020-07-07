@@ -8,7 +8,7 @@ function App() {
   return (
     <Container>
       <header className={classes.Header}>
-        <h1>Checkout Page</h1>
+        <h1>Checkout</h1>
       </header>
       <main className={classes.Main}>
         <div className={classes.FormContainer}>
